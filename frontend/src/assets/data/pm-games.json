@@ -1,0 +1,35 @@
+{
+  "quizBattle": [
+    {
+      "id": 1,
+      "question": "Was bedeutet SMART?",
+      "answers": [
+        "Specific, Measurable, Achievable, Relevant, Time-bound",
+        "Small, Manageable, Agreed, Realistic, Transparent",
+        "Short, Motivating, Actionable, Real, Timely",
+        "Specific, Measurable, Accessible, Reliable, Time-based"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 2,
+      "question": "Wofür steht PM?",
+      "answers": [
+        "Product Manager",
+        "Project Management",
+        "Performance Monitor",
+        "Personal Message"
+      ],
+      "correctAnswer": 1
+    }
+  ],
+
+  "buzzwordBingo": [
+    {"term": "Agilität", "definition": "Fähigkeit, schnell auf Veränderungen zu reagieren."},
+    {"term": "MVP", "definition": "Minimum Viable Product – minimal funktionsfähige Version eines Produkts."}
+  ],
+
+  "phaseMatch": {
+    "phases": ["Initiierung", "Planung", "Durchführung", "Abschluss"]
+  }
+}

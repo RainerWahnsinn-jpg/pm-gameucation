@@ -1,0 +1,57 @@
+.exercise-container {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .exercise-container button {
+    border: 1px solid black;
+    margin-bottom: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: background-color 0.2s, color 0.2s;
+  }
+  
+  .exercise-container button:hover {
+    background-color: black;
+    color: white;
+  }
+  
+  .exercise-container div {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  .exercise-question {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  .exercise-answers {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .exercise-answer-btn {
+    margin-bottom: 0.5rem;
+    width: 100%;
+    text-align: left;
+    padding: 8px 16px;
+    background-color: #f3f4f6;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .exercise-answer-btn:hover {
+    background-color: #e5e7eb;
+  }
+  
+  .exercise-feedback {
+    margin-top: 1rem;
+    font-weight: bold;
+  }
+  

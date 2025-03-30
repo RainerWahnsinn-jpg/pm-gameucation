@@ -1,0 +1,9 @@
+/* footer.css - NUR Footer-spezifische Styles */
+.footer {
+  width: 100%;
+  padding: 10px;
+  background-color: #3f8efc;
+  color: white;
+  text-align: center;
+  flex-shrink: 0; 
+}

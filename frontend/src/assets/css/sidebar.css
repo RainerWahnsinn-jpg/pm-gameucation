@@ -1,0 +1,21 @@
+/* sidebar.css - NUR Sidebar-spezifische Styles */
+.sidebar {
+  width: 250px;            /* Fixe Breite der Sidebar */
+  flex-shrink: 0;          /* Sidebar schrumpft nicht */
+  background-color: #f4f4f4;
+  padding: 15px;
+  height: auto;
+}
+
+
+.sidebar a {
+  display: block;
+  color: #333;
+  text-decoration: none;
+  padding: 10px;
+  transition: background-color 0.3s;
+}
+
+.sidebar a:hover {
+  background-color: #ddd;
+}

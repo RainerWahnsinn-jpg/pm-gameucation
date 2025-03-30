@@ -1,0 +1,103 @@
+/* main.css - Globale Styles & Imports */
+@import "./header.css";
+@import "./footer.css";
+@import "./sidebar.css";
+@import "./exercise.css";
+
+/* Reset und globale Grundlagen */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #f9fafb;
+  box-sizing: border-box;
+}
+
+/* Flex-Container für das gesamte Layout */
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Gesamte verfügbare Höhe */
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.overflow-auto {
+  overflow: auto;
+}
+
+/* Main-Inhalte klar positioniert */
+main {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #f9fafb;
+}
+
+/* Styles für Login-Page */
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f4f8;
+}
+
+.login-card {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.login-title {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.login-input {
+  width: 80%; /* reduzierte Breite zur Zentrierung */
+  margin: 0 auto 15px auto; /* zentrieren + unterer Abstand */
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  box-sizing: border-box;
+  display: block; /* Input auf Block setzen */
+  text-align: center; /* Text mittig innerhalb des Inputs */
+}
+
+
+.login-input:focus {
+  outline: none;
+  border-color: #3f8efc;
+  box-shadow: 0 0 5px rgba(63, 142, 252, 0.3);
+}
+
+.login-button {
+  width: 100%;
+  padding: 10px 15px;
+  border: none;
+  background-color: #3f8efc;
+  color: white;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.login-button:hover {
+  background-color: #306fd4;
+}

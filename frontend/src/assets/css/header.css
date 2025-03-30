@@ -1,0 +1,50 @@
+.header {
+  background-color: #3f8efc;
+  color: white;
+  padding: 10px 30px 10px 20px; /* 🔥 Padding rechts von 20px auf 30px erhöhen! 🔥 */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navigation a {
+  color: white;
+  margin-right: 15px;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s;
+}
+
+.navigation a:hover {
+  border-color: white;
+}
+
+/* Optimaler Abstand für Login-Status rechts */
+.login-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Abstand nach rechts von Status-Text einfügen */
+.status {
+  margin-right: 10px; /* Genau das fehlte! */
+}
+
+.logout-button, .login-status button {
+  padding: 5px 10px;
+  border: 1px solid black;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.logout-button:hover, .login-status button:hover {
+  background-color: black;
+  color: white;
+}
