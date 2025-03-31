@@ -6,3 +6,15 @@
 @import '../styles/buttons.css';
 @import '../styles/forms.css';
 @import '../styles/utilities.css';
+
+.container {
+  max-width: 1200px; /* Inhalt sauber begrenzen */
+  margin: 0 auto; /* horizontal zentrieren */
+}
+
+.card {
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+}

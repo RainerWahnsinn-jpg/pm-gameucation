@@ -1,8 +1,7 @@
-import Layout from '../../components/layout/Layout';
 
 export default function StakeholderManagement() {
   return (
-    <Layout>
+
       <div className="p-8">
         <h1 className="text-2xl font-bold mb-6">📢 Stakeholder Management</h1>
 
@@ -25,6 +24,6 @@ export default function StakeholderManagement() {
         </section>
 
       </div>
-    </Layout>
+
   );
 }

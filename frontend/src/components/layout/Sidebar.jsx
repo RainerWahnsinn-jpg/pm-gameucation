@@ -6,8 +6,10 @@ export default function Sidebar() {
       <nav>
         <ul>
           <li><Link to="/">🏠 Dashboard</Link></li>
-          <li><Link to="/learn">📚 Learnings</Link></li>
-          <li><Link to="/learn/projektmanagement">🧩 PM Themen</Link></li>
+          <li><Link to="/learn-dashboard">📚 Learn Dashboard</Link></li>
+          <li><Link to="/learnings">📖 Meine Learnings</Link></li>
+          <li><Link to="/projektmanagement-dashboard">🎮 PM-Spiele</Link></li>
+          <li><Link to="/pm-topics">📂 PM-Themenübersicht</Link></li>
         </ul>
       </nav>
     </aside>

@@ -1,19 +1,15 @@
 export default function Dashboard() {
   return (
-    <main className="container">
-      <h1>🚀 Dashboard</h1>
+    <main className="container mx-auto px-4">
+      <h1 className="text-2xl font-bold mb-6">🚀 Dashboard</h1>
 
-      <section className="grid">
-        {/* Widget: Prüfungsfortschritt */}
-        <article>
+      <section className="grid gap-6 lg:grid-cols-3 md:grid-cols-2">
+        <article className="card bg-gray-800 p-6 rounded-lg shadow-lg text-white">
           <h3>🎯 Prüfungsfortschritt</h3>
-          <p>Gesamtfortschritt deiner Prüfungsvorbereitung:</p>
-          <progress value="75" max="100" className="secondary"></progress>
+          <progress value="75" max="100" className="w-full"></progress>
           <small>75% geschafft!</small>
         </article>
-
-        {/* Widget: Meine Spiele */}
-        <article>
+        <article className="card bg-gray-800 p-6 rounded-lg shadow-lg text-white">
           <h3>🕹️ Meine Spiele</h3>
           <ul>
             <li><a href="/mindmap-game">🧠 MindmapGame</a></li>
@@ -21,31 +17,22 @@ export default function Dashboard() {
             <li><a href="/phase-match">🔀 PhaseMatch</a></li>
           </ul>
         </article>
-
-        {/* Widget: Nächste Schritte */}
-        <article>
+        <article className="card bg-gray-800 p-6 rounded-lg shadow-lg text-white">
           <h3>📅 Nächste Schritte</h3>
           <ul>
-            <li>🔴 <strong>MindmapGame</strong> weiter üben</li>
-            <li>🔴 <strong>CaseDetective</strong> starten</li>
+            <li>🔴 MindmapGame weiter üben</li>
+            <li>🔴 CaseDetective starten</li>
             <li>🟠 DeadlineDash kennenlernen</li>
           </ul>
         </article>
       </section>
 
-      {/* Mini-Heatmap */}
-      <section style={{ marginTop: "3rem" }}>
-        <h3>🔥 Problemthemen (Mini-Heatmap)</h3>
-        <div className="grid">
-          <div className="card" style={{ backgroundColor: "#e53935", color: "#fff", padding: "0.5rem 1rem", textAlign: "center" }}>
-            Agiles Projektmanagement
-          </div>
-          <div className="card" style={{ backgroundColor: "#fb8c00", color: "#fff", padding: "0.5rem 1rem", textAlign: "center" }}>
-            Kommunikationsmodelle
-          </div>
-          <div className="card" style={{ backgroundColor: "#43a047", color: "#fff", padding: "0.5rem 1rem", textAlign: "center" }}>
-            Projektphasen nach Tuckman
-          </div>
+      <section className="mt-12">
+        <h3 className="text-xl font-bold mb-4">🔥 Problemthemen (Mini-Heatmap)</h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="card bg-red-500 text-center text-white p-4 rounded">Agiles Projektmanagement</div>
+          <div className="card bg-orange-500 text-center text-white p-4 rounded">Kommunikationsmodelle</div>
+          <div className="card bg-green-500 text-center text-white p-4 rounded">Projektphasen nach Tuckman</div>
         </div>
       </section>
     </main>

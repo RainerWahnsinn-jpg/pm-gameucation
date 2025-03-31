@@ -1,8 +1,6 @@
-import Layout from '../../components/layout/Layout';
-
 export default function AgilesProjektmanagement() {
   return (
-    <Layout>
+
       <div className="p-8">
         <h1 className="text-2xl font-bold mb-6">♻️ Agiles Projektmanagement (Scrum)</h1>
 
@@ -91,6 +89,6 @@ export default function AgilesProjektmanagement() {
         </section>
 
       </div>
-    </Layout>
+
   );
 }

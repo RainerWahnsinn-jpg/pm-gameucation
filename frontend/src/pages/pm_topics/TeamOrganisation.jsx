@@ -1,8 +1,8 @@
-import Layout from '../../components/layout/Layout';
+import ContentWrapper from '../../components/ContentWrapper';
 
 export default function TeamOrganisation() {
   return (
-    <Layout>
+
       <div className="p-8">
         <h1 className="text-2xl font-bold mb-6">👥 Team- & Organisationsdynamik</h1>
 
@@ -50,6 +50,6 @@ export default function TeamOrganisation() {
         </section>
 
       </div>
-    </Layout>
+
   );
 }

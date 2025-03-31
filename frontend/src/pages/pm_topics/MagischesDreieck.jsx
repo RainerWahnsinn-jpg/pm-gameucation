@@ -1,8 +1,8 @@
-import Layout from '../../components/layout/Layout';
+import ContentWrapper from '../../components/ContentWrapper';
 
 export default function MagischesDreieck() {
   return (
-    <Layout>
+
       <div className="p-8">
         <h1 className="text-2xl font-bold mb-6">🔺 Magisches Dreieck & Leistungsfaktoren</h1>
 
@@ -24,7 +24,7 @@ export default function MagischesDreieck() {
         <section className="mb-8">
           <h2 className="text-xl font-semibold mb-4">🔸 Vergleich Klassisch vs. Agil</h2>
           <img
-            src="/images/magischesDreieckVergleich.png"
+            src="/assets/images/magischesDreieckVergleich.png"
             alt="Vergleich Klassisches vs. Agiles Projektmanagement"
             className="mt-4 mx-auto rounded shadow-md"
           />
@@ -61,6 +61,6 @@ export default function MagischesDreieck() {
           </table>
         </section>
       </div>
-    </Layout>
+
   );
 }

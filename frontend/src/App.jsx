@@ -31,6 +31,12 @@ import StakeholderManagement from './pages/pm_topics/StakeholderManagement.jsx';
 import VertragProjektabschluss from './pages/pm_topics/VertragProjektabschluss.jsx';
 import ErgaenzteThemen from './pages/pm_topics/ErgaenzteThemen.jsx';
 
+// 📂 Themenübersicht PM (Korrektur!)
+import PmTopics from './pages/PMTopics.jsx';
+import PmLearnings from './pages/PmLearnings.jsx';
+
+
+// Fixing the casing issue by ensuring consistent import paths
 export default function App() {
   return (
     <AuthProvider>
@@ -52,6 +58,11 @@ export default function App() {
 
           {/* 🧠 Prüfungsvorbereitung & Lernmodule */}
           <Route path="/learn/single-choice" element={<PrivateRoute><Layout><SingleChoice /></Layout></PrivateRoute>} />
+
+          {/* 📂 Themenübersicht PM */}
+          <Route path="/pm-topics" element={<PrivateRoute><Layout><PmTopics /></Layout></PrivateRoute>} />
+          <Route path="/learn/pm-learnings" element={<PrivateRoute><Layout><PmLearnings /></Layout></PrivateRoute>} />
+
 
           {/* 📚 Projektmanagement-Themen */}
           <Route path="/learn/grundlagen-projektarten" element={<PrivateRoute><Layout><GrundlagenProjektarten /></Layout></PrivateRoute>} />

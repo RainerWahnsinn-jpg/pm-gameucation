@@ -1,8 +1,6 @@
-import Layout from '../../components/layout/Layout';
-
 export default function Projektueberwachung() {
   return (
-    <Layout>
+
       <div className="p-8">
         <h1 className="text-2xl font-bold mb-6">📈 Projektüberwachung & Steuerung</h1>
 
@@ -53,6 +51,6 @@ export default function Projektueberwachung() {
         </section>
 
       </div>
-    </Layout>
+
   );
 }
