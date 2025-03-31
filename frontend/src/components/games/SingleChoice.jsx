@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Layout from '../components/Layout';
+import Layout from '../layout/Layout';
 
 const fragen = [
   { id: 1, frage: "Was ist ein typisches Merkmal eines Projekts?", antworten: ["Routinearbeit", "Unbegrenzte Ressourcen", "Einmaligkeit", "Permanente Organisation"], korrekt: "Einmaligkeit" },

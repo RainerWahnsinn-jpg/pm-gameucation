@@ -1,6 +1,6 @@
 import Header from './Header';
 import Footer from './Footer';
-import Sidebar from './Sidebar';
+import Sidebar from '../Sidebar';
 import '../assets/css/main.css';
 
 export default function Layout({ children }) {
