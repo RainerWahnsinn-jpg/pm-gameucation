@@ -1,8 +1,9 @@
 from flask import Blueprint, request, jsonify
 from flask_jwt_extended import jwt_required
-from extensions import db
-from models.question import Question
-from schemas.question_schema import QuestionSchema
+from app.extensions import db
+from app.models.question import Question
+from app.schemas.question.schema import QuestionSchema
+
 
 questions_bp = Blueprint('questions', __name__)
 question_schema = QuestionSchema()
