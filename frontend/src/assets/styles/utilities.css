@@ -1,0 +1,9 @@
+/* 🌟 Utility-Klassen 🌟 */
+
+.text-center { text-align: center; }
+.text-bold { font-weight: bold; }
+.mt-1 { margin-top: 1rem; }
+.mb-1 { margin-bottom: 1rem; }
+.p-1 { padding: 1rem; }
+.bg-primary { background-color: var(--accent-color); color: #fff; }
+.rounded { border-radius: 6px; }

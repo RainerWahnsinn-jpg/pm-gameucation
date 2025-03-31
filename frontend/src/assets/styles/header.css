@@ -1,0 +1,28 @@
+/* 🌟 Header Styling 🌟 */
+
+header, .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--header-footer-bg);
+    color: var(--text-color);
+  }
+  
+  header nav, .navigation {
+    display: flex;
+    gap: 15px;
+  }
+  
+  header nav a, .navigation a, .header-actions button {
+    margin: 0 10px;
+    padding: 5px 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .navigation a:hover, .header-actions button:hover {
+    color: var(--accent-color);
+  }
+  
