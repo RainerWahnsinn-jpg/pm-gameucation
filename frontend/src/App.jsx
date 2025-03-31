@@ -1,4 +1,3 @@
-// Vollständige App.jsx
 import '@picocss/pico/css/pico.min.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext.jsx';
@@ -11,12 +10,14 @@ import LearnDashboard from './pages/LearnDashboard.jsx';
 import Login from './pages/Login.jsx';
 import NotFound from './pages/NotFound.jsx';
 
-// Lernmodule & Übungen
-import ExercisePage from './pages/ExercisePage.jsx';
-import BuzzwordBingo from './components/BuzzwordBingo.jsx';
-import PhaseMatch from './components/PhaseMatch.jsx';
-import SingleChoice from './pages/SingleChoice.jsx';
+// Spiele
+import BuzzwordBingo from './pages/games/BuzzwordBingo.jsx';
+import PhaseMatch from './pages/games/PhaseMatch.jsx';
+import MindmapGame from './pages/games/MindmapGame.jsx';
 import CaseDetective from './pages/games/CaseDetective.jsx';
+
+// Lernmodule
+import SingleChoice from './pages/SingleChoice.jsx';
 
 // Projektmanagement-Themen
 import ProjektmanagementDashboard from './pages/ProjektmanagementDashboard.jsx';
@@ -38,16 +39,18 @@ export default function App() {
           <Route path="/login" element={<Login />} />
           <Route path="*" element={<NotFound />} />
 
-          {/* Private Routes mit Layout */}
+          {/* Hauptseiten mit Layout */}
           <Route path="/" element={<PrivateRoute><Layout><Dashboard /></Layout></PrivateRoute>} />
           <Route path="/learn" element={<PrivateRoute><Layout><LearnDashboard /></Layout></PrivateRoute>} />
 
-          {/* Lern-Übungen */}
-          <Route path="/learn/exercise" element={<PrivateRoute><Layout><ExercisePage /></Layout></PrivateRoute>} />
-          <Route path="/learn/buzzword-bingo" element={<PrivateRoute><Layout><BuzzwordBingo /></Layout></PrivateRoute>} />
-          <Route path="/learn/phase-match" element={<PrivateRoute><Layout><PhaseMatch /></Layout></PrivateRoute>} />
+          {/* Spiele */}
+          <Route path="/games/buzzword-bingo" element={<PrivateRoute><Layout><BuzzwordBingo /></Layout></PrivateRoute>} />
+          <Route path="/games/phase-match" element={<PrivateRoute><Layout><PhaseMatch /></Layout></PrivateRoute>} />
+          <Route path="/games/mindmap-game" element={<PrivateRoute><Layout><MindmapGame /></Layout></PrivateRoute>} />
+          <Route path="/games/case-detective" element={<PrivateRoute><Layout><CaseDetective /></Layout></PrivateRoute>} />
+
+          {/* Lernmodule */}
           <Route path="/learn/single-choice" element={<PrivateRoute><Layout><SingleChoice /></Layout></PrivateRoute>} />
-          <Route path="/case-detective" element={<PrivateRoute><Layout><CaseDetective /></Layout></PrivateRoute>} />
 
           {/* Projektmanagement-Themen */}
           <Route path="/learn/projektmanagement" element={<PrivateRoute><Layout><ProjektmanagementDashboard /></Layout></PrivateRoute>} />
@@ -60,9 +63,6 @@ export default function App() {
           <Route path="/learn/stakeholder-management" element={<PrivateRoute><Layout><StakeholderManagement /></Layout></PrivateRoute>} />
           <Route path="/learn/vertrag-projektabschluss" element={<PrivateRoute><Layout><VertragProjektabschluss /></Layout></PrivateRoute>} />
           <Route path="/learn/ergaenzte-themen" element={<PrivateRoute><Layout><ErgaenzteThemen /></Layout></PrivateRoute>} />
-
-          {/* Spiele */}
-          <Route path="/spiele" element={<PrivateRoute><Layout><ProjektmanagementDashboard /></Layout></PrivateRoute>} />
         </Routes>
       </Router>
     </AuthProvider>

@@ -1,18 +1,18 @@
-/* 🌟 Globale Variablen (Hellmodus & Darkmodus) 🌟 */
+/* 🌟 Globale Variablen (Lightmode & Darkmode) 🌟 */
 :root {
-  --bg-color: #f5f5dc; /* beige */
-  --text-color: #000; /* schwarz */
-  --header-footer-bg: #4a4a4a; /* dunkelgrau */
-  --sidebar-bg: #eaeaea; /* hellgrau */
-  --accent-color: #d4af37; /* gold für Highlights */
+  --bg-color: #ffffff; /* Weiß für sauberen Look */
+  --text-color: #333333; /* Dunkelgrau für gute Lesbarkeit */
+  --header-footer-bg: #1a1a1a; /* Sehr dunkles Grau für Kontrast */
+  --sidebar-bg: #f7f7f7; /* Helles Grau für dezente Sidebar */
+  --accent-color: #007bff; /* Modernes, frisches Blau */
 }
 
 .dark-mode {
-  --bg-color: #121212; /* dunkelgrau */
-  --text-color: #e0e0e0; /* hellgrau */
-  --header-footer-bg: #232323; /* noch dunkleres Grau */
-  --sidebar-bg: #1c1c1c; /* dunkle Sidebar */
-  --accent-color: #00ADB5; /* türkis */
+  --bg-color: #121212; /* Dunkelgrauer Hintergrund */
+  --text-color: #e0e0e0; /* Heller Text für Kontrast */
+  --header-footer-bg: #181818; /* Fast Schwarz für Header/Footer */
+  --sidebar-bg: #1e1e1e; /* Dunkelgrau Sidebar */
+  --accent-color: #0d6efd; /* Kräftiges Blau für Akzente */
 }
 
 /* 🌟 Basisstyling 🌟 */
@@ -23,13 +23,13 @@ html, body, #root {
   margin: 0;
   padding: 0;
   height: 100%;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 a {
   color: inherit;
   text-decoration: none;
-  transition: color 0.3s;
+  transition: color 0.2s ease-in-out;
 }
 
 a:hover {
@@ -60,7 +60,7 @@ a:hover {
 
 /* 🌟 Sidebar Styling 🌟 */
 .sidebar {
-  width: 240px;
+  width: 220px;
   padding: 1rem;
   background-color: var(--sidebar-bg);
 }
@@ -78,7 +78,7 @@ a:hover {
   display: block;
   padding: 8px;
   border-radius: 6px;
-  transition: background-color 0.3s;
+  transition: background-color 0.2s ease;
 }
 
 .sidebar a:hover {
@@ -93,27 +93,25 @@ a:hover {
   background-color: var(--header-footer-bg);
   color: var(--text-color);
   font-size: 0.9rem;
-}
-
-.footer a {
-  margin: 0 8px;
-}
-
-.footer a:hover {
-  color: var(--accent-color);
+  position: sticky;
+  bottom: 0;
+  width: 100%;
 }
 
 /* 🌟 Buttons 🌟 */
 button, .button {
-  background-color: var(--sidebar-bg);
-  border-radius: 8px;
-  transition: transform 0.2s, background-color 0.3s;
+  background-color: var(--accent-color);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: transform 0.1s ease, background-color 0.2s ease;
 }
 
 button:hover, .button:hover {
   transform: translateY(-2px);
-  background-color: var(--accent-color);
-  color: #fff;
+  background-color: darken(var(--accent-color), 10%);
 }
 
 /* 🌟 Login Seite 🌟 */
@@ -129,6 +127,7 @@ button:hover, .button:hover {
   border-radius: 12px;
   background-color: var(--sidebar-bg);
   text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .login-input, .login-button {
@@ -136,6 +135,7 @@ button:hover, .button:hover {
   padding: 10px;
   border-radius: 8px;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .login-button {

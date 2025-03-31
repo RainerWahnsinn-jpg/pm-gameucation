@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import Layout from './Layout';
+import Layout from "../../components/Layout";
+
 
 const phases = ["Initiierung", "Planung", "Durchführung", "Abschluss"];
 

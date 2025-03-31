@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import Layout from './Layout';
+import Layout from "../../components/Layout";
+
 
 const buzzwords = [
   "Agilität", "Scrum", "Sprint", "Stakeholder",
