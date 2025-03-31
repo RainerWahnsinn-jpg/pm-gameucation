@@ -5,8 +5,9 @@ export default function Sidebar() {
     <aside className="sidebar">
       <nav>
         <ul>
-          <li><Link to="/">Dashboard</Link></li>
-          <li><Link to="/learn">Learnings</Link></li>
+          <li><Link to="/">🏠 Dashboard</Link></li>
+          <li><Link to="/learn">📚 Learnings</Link></li>
+          <li><Link to="/learn/projektmanagement">🧩 PM Themen</Link></li>
         </ul>
       </nav>
     </aside>

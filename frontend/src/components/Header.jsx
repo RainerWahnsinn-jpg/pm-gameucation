@@ -1,13 +1,24 @@
 import { useAuth } from '../context/AuthContext';
 import { Link, useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
 export default function Header() {
   const auth = useAuth();
   const navigate = useNavigate();
 
-  const handleLogoutClick = (event) => {
-    console.log("Current Target:", event.currentTarget);
-    console.log("Clicked Target:", event.target);
+  // Darkmode-Status speichern & abrufen
+  const [darkMode, setDarkMode] = useState(() => {
+    const savedMode = localStorage.getItem('darkMode');
+    return savedMode ? JSON.parse(savedMode) : false;
+  });
+
+  // Effekt zum Anwenden des Darkmode
+  useEffect(() => {
+    document.body.classList.toggle('dark-mode', darkMode);
+    localStorage.setItem('darkMode', JSON.stringify(darkMode));
+  }, [darkMode]);
+
+  const handleLogout = () => {
     auth.logout();
     navigate('/login');
   };
@@ -15,23 +26,26 @@ export default function Header() {
   return (
     <header className="header">
       <div className="logo">
-        🦄 <strong>PM-Gameucation</strong>
+        🦄 <Link to="/"><strong>PM-Gameucation</strong></Link>
       </div>
 
       <nav className="navigation">
-        <Link to="/">Home</Link>
+        <Link to="/">Dashboard</Link>
+        <Link to="/learn">Learnings</Link>
       </nav>
 
-      <div className="login-status">
+      <div className="header-actions">
+        <button className="darkmode-toggle" onClick={() => setDarkMode(!darkMode)}>
+          {darkMode ? '☀️ Light Mode' : '🌙 Dark Mode'}
+        </button>
+
         {auth.isAuthenticated ? (
-          <div className="login-container">
-            <span className="status">Eingeloggt</span>
-            <button className="logout-button" onClick={handleLogoutClick}>Logout</button>
-          </div>
+          <>
+            <span className="status">👤 Eingeloggt</span>
+            <button className="logout-button" onClick={handleLogout}>Logout</button>
+          </>
         ) : (
-          <Link to="/login">
-            <button>Login</button>
-          </Link>
+          <Link to="/login"><button className="login-button">Login</button></Link>
         )}
       </div>
     </header>

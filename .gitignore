@@ -1,0 +1,17 @@
+# Frontend
+node_modules/
+dist/
+
+# Backend
+__pycache__/
+*.pyc
+instance/
+
+# Sensible Daten
+.env
+
+# Sonstiges
+.vscode/
+.idea/
+*.log
+.DS_Store

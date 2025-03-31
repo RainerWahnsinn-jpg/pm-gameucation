@@ -31,6 +31,13 @@ export default function LearnDashboard() {
           <h2 className="font-semibold text-xl">📈 Lernfortschritt (bald)</h2>
           <p>Visualisierung deiner Lernfortschritte.</p>
         </div>
+
+        <Link
+          to="/learn/projektmanagement" className="p-6 bg-blue-200 rounded-xl shadow hover:bg-blue-300 transition duration-300">
+          <h2 className="font-semibold text-xl">📘 Projektmanagement Themen</h2>
+          <p>Alle PM-Themen übersichtlich sortiert.</p>
+        </Link>
+
       </div>
     </Layout>
   );
