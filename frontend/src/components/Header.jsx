@@ -24,17 +24,27 @@ export default function Header() {
   };
 
   return (
-    <header className="header">
+    <header className="container" style={{
+      position: "sticky",
+      top: 0,
+      zIndex: 100,
+      padding: "0.75rem 0",
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+      backgroundColor: "var(--background-color)"
+    }}>
       <div className="logo">
-        🦄 <Link to="/"><strong>PM-Gameucation</strong></Link>
+        <Link to="/"><strong>🦄 PM-Gameucation</strong></Link>
       </div>
 
-      <nav className="navigation">
+      <nav className="navigation" style={{ display: "flex", gap: "1rem" }}>
         <Link to="/">Dashboard</Link>
         <Link to="/learn">Learnings</Link>
+        <Link to="/spiele">Spiele</Link>
       </nav>
 
-      <div className="header-actions">
+      <div className="header-actions" style={{ display: "flex", gap: "0.5rem", alignItems: "center" }}>
         <button className="darkmode-toggle" onClick={() => setDarkMode(!darkMode)}>
           {darkMode ? '☀️ Light Mode' : '🌙 Dark Mode'}
         </button>
@@ -42,7 +52,7 @@ export default function Header() {
         {auth.isAuthenticated ? (
           <>
             <span className="status">👤 Eingeloggt</span>
-            <button className="logout-button" onClick={handleLogout}>Logout</button>
+            <button className="logout-button secondary" onClick={handleLogout}>Logout</button>
           </>
         ) : (
           <Link to="/login"><button className="login-button">Login</button></Link>

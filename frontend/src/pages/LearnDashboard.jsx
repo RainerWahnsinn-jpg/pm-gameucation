@@ -1,44 +1,48 @@
-import { Link } from 'react-router-dom';
-import Layout from '../components/Layout';
-
 export default function LearnDashboard() {
   return (
-    <Layout>
-      <h1 className="text-2xl font-bold mb-4">Learnings (PM-Klausur) 🎯</h1>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <Link to="/learn/exercise" className="p-6 bg-green-200 rounded-xl shadow hover:bg-green-300 transition duration-300">
-          <h2 className="font-semibold text-xl">📝 PM-Prüfungssimulation</h2>
+    <div className="container">
+      <h1>📚 Learnings (PM-Klausur)</h1>
+      <div className="grid">
+        <article>
+          <h3>📝 PM-Prüfungssimulation</h3>
           <p>Realistische Übungsfragen wie in der Klausur.</p>
-        </Link>
-
-        <Link to="/learn/buzzword-bingo" className="p-6 bg-yellow-200 rounded-xl shadow hover:bg-yellow-300 transition duration-300">
-          <h2 className="font-semibold text-xl">📚 Buzzword Bingo</h2>
+          <footer>
+            <a href="/learn/exercise" role="button">Jetzt starten</a>
+          </footer>
+        </article>
+        <article>
+          <h3>📚 Buzzword Bingo</h3>
           <p>Wichtige PM-Begriffe spielerisch lernen.</p>
-        </Link>
-
-        <Link to="/learn/single-choice" className="p-6 bg-red-200 rounded-xl shadow hover:bg-red-300 transition duration-300">
-          <h2 className="font-semibold text-xl">📝 Prüfungssimulation Single Choice</h2>
+          <footer>
+            <a href="/learn/buzzword-bingo" role="button">Jetzt spielen</a>
+          </footer>
+        </article>
+        <article>
+          <h3>🗒️ Single Choice</h3>
           <p>Teste dein Wissen realistisch mit Prüfungsfragen.</p>
-        </Link>
-
-        <Link to="/learn/phase-match" className="p-6 bg-purple-200 rounded-xl shadow hover:bg-purple-300 transition duration-300">
-          <h2 className="font-semibold text-xl">🔄 PhaseMatch</h2>
+          <footer>
+            <a href="/learn/single-choice" role="button">Übung starten</a>
+          </footer>
+        </article>
+        <article>
+          <h3>🔄 PhaseMatch</h3>
           <p>Phasenmodelle und Projektlebenszyklus meistern.</p>
-        </Link>
-
-        <div className="p-6 bg-gray-200 rounded-xl shadow cursor-not-allowed">
-          <h2 className="font-semibold text-xl">📈 Lernfortschritt (bald)</h2>
+          <footer>
+            <a href="/learn/phase-match" role="button">Jetzt starten</a>
+          </footer>
+        </article>
+        <article>
+          <h3>📈 Lernfortschritt (bald)</h3>
           <p>Visualisierung deiner Lernfortschritte.</p>
-        </div>
-
-        <Link
-          to="/learn/projektmanagement" className="p-6 bg-blue-200 rounded-xl shadow hover:bg-blue-300 transition duration-300">
-          <h2 className="font-semibold text-xl">📘 Projektmanagement Themen</h2>
+        </article>
+        <article>
+          <h3>📘 Projektmanagement Themen</h3>
           <p>Alle PM-Themen übersichtlich sortiert.</p>
-        </Link>
-
+          <footer>
+            <a href="/learn/projektmanagement" role="button">Anzeigen</a>
+          </footer>
+        </article>
       </div>
-    </Layout>
+    </div>
   );
 }
