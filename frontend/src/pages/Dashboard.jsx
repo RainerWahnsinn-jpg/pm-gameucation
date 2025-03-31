@@ -37,37 +37,13 @@ export default function Dashboard() {
       <section style={{ marginTop: "3rem" }}>
         <h3>🔥 Problemthemen (Mini-Heatmap)</h3>
         <div className="grid">
-          <div
-            className="card"
-            style={{
-              backgroundColor: "#e53935",
-              color: "#fff",
-              padding: "0.5rem 1rem",
-              textAlign: "center",
-            }}
-          >
+          <div className="card" style={{ backgroundColor: "#e53935", color: "#fff", padding: "0.5rem 1rem", textAlign: "center" }}>
             Agiles Projektmanagement
           </div>
-          <div
-            className="card"
-            style={{
-              backgroundColor: "#fb8c00",
-              color: "#fff",
-              padding: "0.5rem 1rem",
-              textAlign: "center",
-            }}
-          >
+          <div className="card" style={{ backgroundColor: "#fb8c00", color: "#fff", padding: "0.5rem 1rem", textAlign: "center" }}>
             Kommunikationsmodelle
           </div>
-          <div
-            className="card"
-            style={{
-              backgroundColor: "#43a047",
-              color: "#fff",
-              padding: "0.5rem 1rem",
-              textAlign: "center",
-            }}
-          >
+          <div className="card" style={{ backgroundColor: "#43a047", color: "#fff", padding: "0.5rem 1rem", textAlign: "center" }}>
             Projektphasen nach Tuckman
           </div>
         </div>
