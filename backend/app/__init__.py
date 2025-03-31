@@ -4,9 +4,9 @@ from config import Config
 
 def create_app():
     # Flask-App initialisieren
-    app = Flask(__name__, static_folder='../frontend/dist', template_folder='../frontend/dist')
+    app = Flask(__name__)
 
-    # Konfiguration aus der Config-Klasse laden
+    # Konfiguration laden
     app.config.from_object(Config)
 
     # Flask-Erweiterungen initialisieren
@@ -14,22 +14,20 @@ def create_app():
     ma.init_app(app)
     jwt.init_app(app)
 
-    # HTML-Frontend (deine schöne Startseite)
+    # Startseite (Index)
     @app.route("/")
     def index():
-        # Zeigt die index.html-Seite aus dem Frontend an
         return render_template("index.html")
 
-    # JSON API-Statusmeldung
+    # API-Check-Endpunkt
     @app.route("/api")
-    def api_status():
-        return jsonify({"msg": "🚀 PM-Gameucation API läuft perfekt!"}), 200
+    def api_overview():
+        return jsonify({"msg": "🚀 API läuft, Endpunkte bald verfügbar!"})
 
-    # Blueprints importieren (Endpunkte modular organisieren)
+    # Blueprints registrieren
     from .routes.auth import auth_bp
     from .routes.questions import questions_bp
 
-    # Blueprints registrieren unter '/api'
     app.register_blueprint(auth_bp, url_prefix='/api')
     app.register_blueprint(questions_bp, url_prefix='/api')
 
