@@ -1,6 +1,4 @@
-import { useState } from 'react';
-import Layout from "../layout/Layout";
-
+import { useState, useEffect } from "react";
 
 const phases = ["Initiierung", "Planung", "Durchführung", "Abschluss"];
 
@@ -18,52 +16,76 @@ const tasks = [
 export default function PhaseMatch() {
   const [selectedPhase, setSelectedPhase] = useState("");
   const [feedback, setFeedback] = useState("");
+  const [currentTask, setCurrentTask] = useState(null);
+  const [score, setScore] = useState(0);
 
-  const checkPhase = (correctPhase) => {
-    if (selectedPhase === correctPhase) {
+  useEffect(() => {
+    setRandomTask();
+  }, []);
+
+  const setRandomTask = () => {
+    const randomTask = tasks[Math.floor(Math.random() * tasks.length)];
+    setCurrentTask(randomTask);
+    setSelectedPhase("");
+    setFeedback("");
+  };
+
+  const checkPhase = () => {
+    if (selectedPhase === currentTask.phase) {
       setFeedback("✅ Richtig!");
+      setScore(score + 10);
     } else {
-      setFeedback(`❌ Leider falsch. Richtige Phase: ${correctPhase}`);
+      setFeedback(`❌ Leider falsch. Richtige Phase: ${currentTask.phase}`);
+      setScore(score > 0 ? score - 5 : 0);
     }
   };
 
-  const randomTask = tasks[Math.floor(Math.random() * tasks.length)];
-
   return (
-    <Layout>
-      <h1 className="text-2xl font-bold mb-6">🔄 PhaseMatch</h1>
-      
-      <div className="bg-white p-6 rounded-xl shadow">
-        <p className="text-lg font-semibold mb-4">Ordne die Aufgabe der korrekten Phase zu:</p>
-        <div className="text-xl italic mb-4">"{randomTask.task}"</div>
+    <div className="container">
+      <h1>🔄 Phase Match</h1>
+      <p>Ordne Aufgaben der richtigen Projektphase zu und sammle Punkte!</p>
 
-        <div className="mb-4">
+      <section className="card">
+        <h3>📌 Aufgabe:</h3>
+        <p className="text-xl">
+          <em>{currentTask?.task}</em>
+        </p>
+      </section>
+
+      <section className="card">
+        <h3>📂 Wähle die passende Phase:</h3>
+        <div className="grid">
           {phases.map((phase, idx) => (
             <button
               key={idx}
+              className={`outline ${selectedPhase === phase ? "contrast" : ""}`}
               onClick={() => setSelectedPhase(phase)}
-              className={`m-2 px-4 py-2 rounded ${
-                selectedPhase === phase ? 'bg-blue-300' : 'bg-gray-200 hover:bg-blue-200'
-              }`}
             >
               {phase}
             </button>
           ))}
         </div>
 
-        <button
-          className="px-4 py-2 bg-green-500 text-white rounded shadow"
-          onClick={() => checkPhase(randomTask.phase)}
-        >
+        <button className="secondary mt-4" onClick={checkPhase}>
           Prüfen
         </button>
+      </section>
 
-        {feedback && (
-          <div className="mt-4 text-xl font-bold">
-            {feedback}
-          </div>
-        )}
-      </div>
-    </Layout>
+      {feedback && (
+        <section className="card">
+          <h3>📣 Feedback:</h3>
+          <p>{feedback}</p>
+          <button className="secondary" onClick={setRandomTask}>
+            Neue Aufgabe
+          </button>
+        </section>
+      )}
+
+      <section className="card">
+        <h3>🏆 Dein aktueller Score:</h3>
+        <progress value={score} max={100}></progress>
+        <small>{score} Punkte erreicht</small>
+      </section>
+    </div>
   );
 }

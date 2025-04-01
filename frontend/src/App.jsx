@@ -118,7 +118,7 @@ export default function App() {
             }
           />
           <Route
-            path="/learn/single-choice"
+            path="/games/single-choice"
             element={
               <PrivateRoute>
                 <Layout>

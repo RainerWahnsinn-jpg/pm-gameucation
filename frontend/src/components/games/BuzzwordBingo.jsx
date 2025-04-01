@@ -1,50 +1,63 @@
-import { useState, useEffect } from 'react';
-import Layout from "../layout/Layout";
-
-
-const buzzwords = [
-  "Agilität", "Scrum", "Sprint", "Stakeholder",
-  "Triple Constraint", "Kritischer Pfad", "Gantt-Diagramm", "SMART-Ziele",
-  "Risikomanagement", "Matrixorganisation", "Wasserfallmodell", "Projektstrukturplan",
-  "Qualitätsmanagement", "Ressourcenallokation", "Projektlebenszyklus", "Daily Standup",
-];
-
-function shuffle(array) {
-  return array.sort(() => Math.random() - 0.5);
-}
+import { useState, useEffect } from "react";
 
 export default function BuzzwordBingo() {
-  const [board, setBoard] = useState([]);
-  const [selected, setSelected] = useState([]);
+  const [buzzwords, setBuzzwords] = useState([]);
+  const [selectedWords, setSelectedWords] = useState([]);
+  const [score, setScore] = useState(0);
 
   useEffect(() => {
-    setBoard(shuffle(buzzwords).slice(0, 9));
+    const mockBuzzwords = [
+      "Agilität",
+      "Scrum",
+      "Sprint",
+      "Stakeholder",
+      "Triple Constraint",
+      "Kritischer Pfad",
+      "Gantt-Diagramm",
+      "SMART-Ziele",
+      "Risikomanagement",
+    ];
+    setBuzzwords(mockBuzzwords);
   }, []);
 
-  const handleSelect = (word) => {
-    setSelected(prev =>
-      prev.includes(word) ? prev.filter(w => w !== word) : [...prev, word]
-    );
+  const handleWordClick = (word) => {
+    if (selectedWords.includes(word)) {
+      alert("❌ Bereits ausgewählt!");
+      return;
+    }
+
+    setSelectedWords([...selectedWords, word]);
+    setScore(score + 10);
+    alert(`✅ "${word}" ausgewählt!`);
   };
 
-  const isSelected = (word) => selected.includes(word);
-
   return (
-    <Layout>
-      <h1 className="text-2xl font-bold mb-6">📚 Buzzword Bingo</h1>
-      <div className="grid grid-cols-3 gap-4 bg-white p-6 rounded-xl shadow">
-        {board.map((word, index) => (
-          <button
-            key={index}
-            className={`p-4 rounded-xl border-2 transition duration-300 ${
-              isSelected(word) ? 'bg-green-300 border-green-500' : 'bg-gray-100 border-gray-300'
-            }`}
-            onClick={() => handleSelect(word)}
-          >
-            {word}
-          </button>
-        ))}
-      </div>
-    </Layout>
+    <div className="container">
+      <h1>🎲 Buzzword Bingo</h1>
+      <p>Wähle jedes Buzzword genau einmal und sammle Punkte!</p>
+
+      <section className="card">
+        <h3>🔸 Buzzwords:</h3>
+        <div className="grid">
+          {buzzwords.map((word, index) => (
+            <button
+              key={index}
+              className={`outline ${
+                selectedWords.includes(word) ? "contrast" : ""
+              }`}
+              onClick={() => handleWordClick(word)}
+            >
+              {word}
+            </button>
+          ))}
+        </div>
+      </section>
+
+      <section className="card">
+        <h3>🏆 Dein aktueller Score:</h3>
+        <progress value={score} max={90}></progress>
+        <small>{score} von 90 Punkten erreicht</small>
+      </section>
+    </div>
   );
 }

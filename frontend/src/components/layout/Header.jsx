@@ -1,10 +1,12 @@
 import { useAuth } from "../../context/AuthContext";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
+import "../../assets/styles/header.css"; // <-- Hier korrigiert!
 
 export default function Header() {
   const auth = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
 
   // Darkmode-Status speichern & abrufen
   const [darkMode, setDarkMode] = useState(() => {
@@ -24,33 +26,19 @@ export default function Header() {
   };
 
   return (
-    <header
-      className="container"
-      style={{
-        position: "sticky",
-        top: 0,
-        zIndex: 100,
-        padding: "0.75rem 0",
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        backgroundColor: "var(--background-color)",
-      }}
-    >
-      <div className="logo">
-        <Link to="/">
+    <header className="header">
+      <div className="header-left">
+        <Link to="/" className="logo">
           <strong>🦄 PM-Gameucation</strong>
         </Link>
+        {location.pathname !== "/" && (
+          <button className="back-button" onClick={() => navigate(-1)}>
+            🔙 Zurück
+          </button>
+        )}
       </div>
 
-      <nav className="navigation" style={{ display: "flex", gap: "1rem" }}>
-        <Link to="/">Dashboard</Link>
-      </nav>
-
-      <div
-        className="header-actions"
-        style={{ display: "flex", gap: "0.5rem", alignItems: "center" }}
-      >
+      <div className="header-actions">
         <button
           className="darkmode-toggle"
           onClick={() => setDarkMode(!darkMode)}

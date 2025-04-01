@@ -1,37 +1,66 @@
+import { Link } from "react-router-dom";
+
 export default function ProjektmanagementDashboard() {
   return (
-    <div className="container">
-      <h1>🎮 Spiele</h1>
-      <div className="grid">
+    <main className="container py-8">
+      <h1 className="text-2xl font-bold mb-6">🎮 Projektmanagement Spiele</h1>
+
+      <section className="grid">
+        {/* 🧠 Mindmap Game */}
         <article>
-          <h3>🧠 MindmapGame</h3>
-          <p>Logische Verknüpfungen von PM-Begriffen.</p>
+          <h3>🧠 Mindmap Game</h3>
+          <p>Verknüpfe Begriffe sinnvoll und lerne PM-Konzepte spielerisch.</p>
           <footer>
-            <a href="/mindmap-game" role="button">Starten</a>
+            <Link to="/games/mindmap-game" role="button">
+              Spielen
+            </Link>
           </footer>
         </article>
+
+        {/* 🎲 Buzzword Bingo */}
         <article>
-          <h3>🕵️ CaseDetective</h3>
-          <p>Praxisnahe Fallstudien analytisch lösen.</p>
+          <h3>🎲 Buzzword Bingo</h3>
+          <p>Teste spielerisch dein Wissen rund um PM-Begriffe.</p>
           <footer>
-            <a href="/case-detective" role="button">Starten</a>
+            <Link to="/games/buzzword-bingo" role="button">
+              Spielen
+            </Link>
           </footer>
         </article>
+
+        {/* 🕵️ Case Detective */}
         <article>
-          <h3>🔄 PhaseMatch</h3>
-          <p>Projektphasen korrekt zuordnen.</p>
+          <h3>🕵️ Case Detective</h3>
+          <p>Untersuche Fälle und finde die richtige Lösung.</p>
           <footer>
-            <a href="/learn/phase-match" role="button">Spielen</a>
+            <Link to="/games/case-detective" role="button">
+              Spielen
+            </Link>
           </footer>
         </article>
+
+        {/* 🎯 Phase Match */}
         <article>
-          <h3>⏳ DeadlineDash</h3>
-          <p>Zeitpläne und Abläufe trainieren.</p>
+          <h3>🎯 Phase Match</h3>
+          <p>Ordne Projektphasen den richtigen Beschreibungen zu.</p>
           <footer>
-            <a href="#" role="button">Bald verfügbar</a>
+            <Link to="/games/phase-match" role="button">
+              Spielen
+            </Link>
           </footer>
         </article>
-      </div>
-    </div>
+
+        {/* ✅ Single Choice */}
+        <article>
+          <h3>✅ Probeklausur</h3>
+          <p>Bereite dich mit gezielten Single-Choice-Fragen optimal vor.</p>
+          <footer>
+            <Link to="/games/single-choice" role="button">
+              Spielen
+            </Link>
+          </footer>
+        </article>
+      </section>
+    </main>
   );
 }

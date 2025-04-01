@@ -1,31 +1,63 @@
 /* 🌟 Header Styling 🌟 */
-
-header, .header {
-    position: sticky;             /* fixiert den Header beim Scrollen */
-    top: 0;                       /* bleibt immer am oberen Rand */
-    z-index: 1000;                /* über anderen Elementen liegen */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background-color: var(--header-footer-bg);
-    color: var(--text-color);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Schöner Schatteneffekt */
+.header {
+  position: fixed; /* Immer am oberen Bildschirmrand fixiert */
+  top: 0;
+  left: 0;
+  width: 100%; /* Volle Bildschirmbreite */
+  height: 60px;
+  z-index: 1000; /* Überlagert alle anderen Elemente */
+  display: flex;
+  justify-content: space-between; /* Abstand zwischen Logo und Aktionen */
+  align-items: center;
+  padding: 0 2rem;
+  background-color: var(--header-footer-bg);
+  color: var(--text-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-header nav, .navigation {
-    display: flex;
-    gap: 15px;
+/* Linker Bereich (Logo + Zurück Button) */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
-header nav a, .navigation a, .header-actions button {
-    margin: 0 10px;
-    padding: 5px 10px;
-    background: none;
-    border: none;
-    cursor: pointer;
+/* Logo-Styling */
+.header .logo {
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: inherit;
 }
 
-.navigation a:hover, .header-actions button:hover {
-    color: var(--accent-color);
+/* Zurück-Button */
+.header .back-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+.header .back-button:hover {
+  color: var(--accent-color);
+}
+
+/* Rechter Bereich (Darkmode & User-Info) */
+.header-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* Darkmode-Toggle & Buttons */
+.header-actions button {
+  padding: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+.header-actions button:hover {
+  color: var(--accent-color);
 }
