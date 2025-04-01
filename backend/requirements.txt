@@ -1,0 +1,7 @@
+Flask
+flask-sqlalchemy
+flask-marshmallow
+marshmallow-sqlalchemy
+flask-jwt-extended
+python-dotenv
+openai
