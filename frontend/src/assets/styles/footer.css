@@ -1,11 +1,15 @@
-/* 🌟 Footer Styling (Sticky mit Flexbox) 🌟 */
-
-footer, .footer {
-    padding: 1rem;
-    text-align: center;
-    background-color: var(--header-footer-bg);
-    color: var(--text-color);
-    font-size: 0.9rem;
-    margin-top: auto;
-  }
-  
+footer,
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--header-footer-bg);
+  color: var(--text-color); /* ✅ ergänzt für optimale Lesbarkeit */
+  font-size: 0.85rem;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}

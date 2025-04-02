@@ -1,7 +1,7 @@
 import { useAuth } from "../../context/AuthContext";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
-import "../../assets/styles/header.css"; // <-- Hier korrigiert!
+import "../../assets/styles/header.css";
 
 export default function Header() {
   const auth = useAuth();

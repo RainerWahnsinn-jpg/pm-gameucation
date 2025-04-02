@@ -1,29 +1,30 @@
 /* 🌟 Sidebar Styling 🌟 */
 
 .sidebar {
-    width: 220px;
-    padding: 1rem;
-    background-color: var(--sidebar-bg);
-  }
-  
-  .sidebar ul {
-    padding: 0;
-    list-style: none;
-  }
-  
-  .sidebar li {
-    margin-bottom: 10px;
-  }
-  
-  .sidebar a {
-    display: block;
-    padding: 8px;
-    border-radius: 6px;
-    transition: background-color 0.2s ease;
-  }
-  
-  .sidebar a:hover {
-    background-color: var(--accent-color);
-    color: #fff;
-  }
-  
+  width: 220px;
+  padding: 1rem;
+  background-color: var(--sidebar-bg);
+  color: var(--text-color); /* ✅ ergänzt für gute Lesbarkeit */
+  font-size: 1rem;
+}
+
+.sidebar ul {
+  padding: 0;
+  list-style: none;
+}
+
+.sidebar li {
+  margin-bottom: 10px;
+}
+
+.sidebar a {
+  display: block;
+  padding: 8px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.sidebar a:hover {
+  background-color: var(--accent-color);
+  color: #fff;
+}

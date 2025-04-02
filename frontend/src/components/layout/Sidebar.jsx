@@ -9,18 +9,11 @@ export default function Sidebar() {
             <Link to="/">🏠 Dashboard</Link>
           </li>
           <li>
-            <Link to="/learn-dashboard">📚 Lernen </Link>
+            <Link to="/learning-dashboard">📚 Lernen</Link>
           </li>
           <li>
-            <Link to="/projektmanagement-dashboard">🎮 PM-Spiele</Link>
+            <Link to="/projektmanagement-dashboard">⚙️ PM Games</Link>
           </li>
-          <li>
-            <Link to="/pm-topics">📂 PM-Deep Dive</Link>
-          </li>
-          <li>
-            <Link to="/learnings">📖 Meine Learnings</Link>
-          </li>
-          {/* ✅ Neu hinzugefügt */}
         </ul>
       </nav>
     </aside>

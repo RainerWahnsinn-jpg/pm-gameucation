@@ -1,17 +1,16 @@
-/* 🌟 Button-Styling 🌟 */
+button,
+.button {
+  background-color: var(--accent-color);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: transform 0.1s ease, background-color 0.2s ease;
+}
 
-button, .button {
-    background-color: var(--accent-color);
-    color: #ffffff;
-    border: none;
-    border-radius: 6px;
-    padding: 8px 12px;
-    cursor: pointer;
-    transition: transform 0.1s ease, background-color 0.2s ease;
-  }
-  
-  button:hover, .button:hover {
-    transform: translateY(-2px);
-    filter: brightness(90%);
-  }
-  
+button:hover,
+.button:hover {
+  transform: translateY(-2px);
+  filter: brightness(90%);
+}

@@ -20,7 +20,10 @@
 }
 
 .grid article {
-  background: var(--sidebar-bg);
+  background: var(
+    --container-bg
+  ); /* ✅ So erhältst du eine klare Container-Farbe */
+  color: var(--text-color); /* ✅ Lesbarkeit gesichert */
   padding: 1.5rem;
   border-radius: 0.5rem;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);

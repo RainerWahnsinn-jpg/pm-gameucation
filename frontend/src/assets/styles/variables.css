@@ -1,17 +1,17 @@
 :root {
-    --bg-color: #ffffff;                  /* Weißer Hintergrund (sehr klar & sauber) */
-    --text-color: #000000;                /* Schwarzer Text für perfekte Lesbarkeit */
-    --header-footer-bg: #1a1a1a;          /* Dunkelgrau für klaren Kontrast im Header/Footer */
-    --sidebar-bg: #f2f2f2;                /* Dezentes Grau für Sidebar */
-    --accent-color: #007bff;              /* Modernes Blau für interaktive Elemente */
-    --container-bg: #e8f0fe;              /* Dezentes Hellblau für Container, angenehm für die Augen */
+  --bg-color: #ffffff; /* Weißer Hintergrund */
+  --text-color: #212529; /* Dunkle Schrift (sehr gut lesbar) */
+  --header-footer-bg: #f8f9fa; /* Dezentes Hellgrau für Header/Footer */
+  --sidebar-bg: #e9ecef; /* Dezentes Sidebar-Grau */
+  --accent-color: #0d6efd; /* Modernes Blau */
+  --container-bg: #f0f8ff; /* Sehr helles Blau für Container */
 }
 
 .dark-mode {
-    --bg-color: #121212;                  /* Hintergrund dunkel */
-    --text-color: #e0e0e0;                /* Text hell für guten Kontrast */
-    --header-footer-bg: #181818;          /* Header/Footer fast schwarz */
-    --sidebar-bg: #1e1e1e;                /* Sidebar dunkelgrau */
-    --accent-color: #0d6efd;              /* Kräftigeres Blau */
-    --container-bg: #1f1f1f;              /* Container dunkelgrau für harmonisches Erscheinungsbild */
+  --bg-color: #121212; /* Hintergrund dunkel */
+  --text-color: #e0e0e0; /* Text hell für guten Kontrast */
+  --header-footer-bg: #181818; /* Header/Footer fast schwarz */
+  --sidebar-bg: #1e1e1e; /* Sidebar dunkelgrau */
+  --accent-color: #0d6efd; /* Kräftigeres Blau */
+  --container-bg: #1f1f1f; /* Container dunkelgrau für harmonisches Erscheinungsbild */
 }

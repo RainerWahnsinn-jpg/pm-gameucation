@@ -10,6 +10,7 @@ import NotFound from "./pages/NotFound.jsx";
 
 // 📌 Haupt-Dashboards
 import Dashboard from "./pages/Dashboard.jsx";
+import LearningDashboard from "./pages/LearningDashboard.jsx";
 import LearnDashboard from "./pages/LearnDashboard.jsx";
 import ProjektmanagementDashboard from "./pages/ProjektmanagementDashboard.jsx";
 
@@ -35,6 +36,22 @@ import ErgaenzteThemen from "./pages/pm_topics/ErgaenzteThemen.jsx";
 import PmTopics from "./pages/PMTopics.jsx";
 import Learnings from "./pages/Learnings.jsx";
 
+import AgileMethoden from "./pages/learnings/agile-methoden.jsx";
+import KommunikationKonflikte from "./pages/learnings/kommunikation-konflikte.jsx";
+import ProjektphasenModelle from "./pages/learnings/projektphasen-modelle.jsx";
+
+// SAP
+
+import SapDashboard from "./pages/sap/SapDashboard.jsx";
+import BusinessPartner from "./pages/sap/sd/BusinessPartner.jsx";
+import BusinessPartnerAdvanced from "./pages/sap/sd/BusinessPartnerAdvanced.jsx";
+import SettlementManagement from "./pages/sap/sd/SettlementManagement.jsx";
+import SettlementManagementAdvanced from "./pages/sap/sd/SettlementManagementAdvanced.jsx";
+import CreditMemoProcessing from "./pages/sap/sd/CreditMemoProcessing.jsx";
+import CreditMemoProcessingAdvanced from "./pages/sap/sd/CreditMemoProcessingAdvanced.jsx";
+import PriceUpload from "./pages/sap/sd/PriceUpload.jsx";
+import PriceUploadAdvanced from "./pages/sap/sd/PriceUploadAdvanced.jsx";
+
 // 🔖 Finale App-Routes
 export default function App() {
   return (
@@ -43,7 +60,6 @@ export default function App() {
         <Routes>
           {/* 🔐 Auth-Routen */}
           <Route path="/login" element={<Login />} />
-
           {/* 📌 Dashboards */}
           <Route
             path="/"
@@ -51,6 +67,16 @@ export default function App() {
               <PrivateRoute>
                 <Layout>
                   <Dashboard />
+                </Layout>
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/learning-dashboard"
+            element={
+              <PrivateRoute>
+                <Layout>
+                  <LearningDashboard />
                 </Layout>
               </PrivateRoute>
             }
@@ -71,6 +97,107 @@ export default function App() {
               <PrivateRoute>
                 <Layout>
                   <ProjektmanagementDashboard />
+                </Layout>
+              </PrivateRoute>
+            }
+          />
+
+          {/* SAP */}
+
+          <Route
+            path="/sap/sd/price-upload-advanced"
+            element={
+              <PrivateRoute>
+                <Layout>
+                  <PriceUploadAdvanced />
+                </Layout>
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/sap/sd/price-upload"
+            element={
+              <PrivateRoute>
+                <Layout>
+                  <PriceUpload />
+                </Layout>
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/sap/sd/credit-memo-processing-advanced"
+            element={
+              <PrivateRoute>
+                <Layout>
+                  <CreditMemoProcessingAdvanced />
+                </Layout>
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/sap/sd/credit-memo-processing"
+            element={
+              <PrivateRoute>
+                <Layout>
+                  <CreditMemoProcessing />
+                </Layout>
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/sap-dashboard"
+            element={
+              <PrivateRoute>
+                <Layout>
+                  <SapDashboard />
+                </Layout>
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/sap/sd/business-partner"
+            element={
+              <PrivateRoute>
+                <Layout>
+                  <BusinessPartner />
+                </Layout>
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/sap/sd/settlement-management"
+            element={
+              <PrivateRoute>
+                <Layout>
+                  <SettlementManagement />
+                </Layout>
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/sap/sd/business-partner-advanced"
+            element={
+              <PrivateRoute>
+                <Layout>
+                  <BusinessPartnerAdvanced />
+                </Layout>
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/sap/sd/settlement-management-advanced"
+            element={
+              <PrivateRoute>
+                <Layout>
+                  <SettlementManagementAdvanced />
                 </Layout>
               </PrivateRoute>
             }
@@ -127,7 +254,6 @@ export default function App() {
               </PrivateRoute>
             }
           />
-
           {/* 📖 PM-Themenübersicht */}
           <Route
             path="/pm-topics"
@@ -139,14 +265,45 @@ export default function App() {
               </PrivateRoute>
             }
           />
-
-          {/* 📚 PM-Learnings */}
+          {/* 📚 PM-Learnings Hauptseite */}
           <Route
             path="/learnings"
             element={
               <PrivateRoute>
                 <Layout>
                   <Learnings />
+                </Layout>
+              </PrivateRoute>
+            }
+          />
+          {/* 📚 Learnings Themen */}
+          <Route
+            path="/learnings/agile-methoden"
+            element={
+              <PrivateRoute>
+                <Layout>
+                  <AgileMethoden />
+                </Layout>
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/learnings/kommunikation-konflikte"
+            element={
+              <PrivateRoute>
+                <Layout>
+                  <KommunikationKonflikte />
+                </Layout>
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/learnings/projektphasen-modelle"
+            element={
+              <PrivateRoute>
+                <Layout>
+                  <ProjektphasenModelle />
                 </Layout>
               </PrivateRoute>
             }
@@ -243,7 +400,6 @@ export default function App() {
               </PrivateRoute>
             }
           />
-
           {/* ❌ Fallback-Route */}
           <Route path="*" element={<NotFound />} />
         </Routes>
