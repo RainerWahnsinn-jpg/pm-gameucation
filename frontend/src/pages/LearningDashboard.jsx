@@ -16,7 +16,7 @@ export default function LearningDashboard() {
 
         <article>
           <h3>📌 SAP SD</h3>
-          <p>Inhalte rund um SAP ECC und S/4HANA.</p>
+          <p>Inhalte rund um SAP ECC und S/4HANA SD.</p>
           <Link to="/sap-dashboard" role="button">
             Öffnen
           </Link>

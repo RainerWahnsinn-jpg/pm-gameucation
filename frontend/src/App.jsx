@@ -294,7 +294,7 @@ export default function App() {
 
           {/* 📌 Projektmanagement-Themen */}
           <Route
-            path="/pm/topics/grundlagen-projektarten"
+            path="/learn/grundlagen-projektarten"
             element={
               <PrivateRoute>
                 <Layout>
@@ -304,7 +304,7 @@ export default function App() {
             }
           />
           <Route
-            path="/pm/topics/magisches-dreieck"
+            path="/learn/magisches-dreieck"
             element={
               <PrivateRoute>
                 <Layout>
@@ -314,7 +314,7 @@ export default function App() {
             }
           />
           <Route
-            path="/pm/topics/projektstrukturierung"
+            path="/learn/projektstrukturierung"
             element={
               <PrivateRoute>
                 <Layout>
@@ -324,7 +324,7 @@ export default function App() {
             }
           />
           <Route
-            path="/pm/topics/agiles-projektmanagement"
+            path="/learn/agiles-projektmanagement"
             element={
               <PrivateRoute>
                 <Layout>
@@ -334,7 +334,7 @@ export default function App() {
             }
           />
           <Route
-            path="/pm/topics/projektueberwachung"
+            path="/learn/projektueberwachung"
             element={
               <PrivateRoute>
                 <Layout>
@@ -344,7 +344,7 @@ export default function App() {
             }
           />
           <Route
-            path="/pm/topics/team-organisation"
+            path="/learn/team-organisation"
             element={
               <PrivateRoute>
                 <Layout>
@@ -354,7 +354,7 @@ export default function App() {
             }
           />
           <Route
-            path="/pm/topics/stakeholder-management"
+            path="/learn/stakeholder-management"
             element={
               <PrivateRoute>
                 <Layout>
@@ -364,7 +364,7 @@ export default function App() {
             }
           />
           <Route
-            path="/pm/topics/vertrag-projektabschluss"
+            path="/learn/vertrag-projektabschluss"
             element={
               <PrivateRoute>
                 <Layout>
@@ -374,7 +374,7 @@ export default function App() {
             }
           />
           <Route
-            path="/pm/topics/ergaenzte-themen"
+            path="/learn/ergaenzte-themen"
             element={
               <PrivateRoute>
                 <Layout>
