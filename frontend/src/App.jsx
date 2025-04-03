@@ -8,11 +8,20 @@ import Layout from "./components/layout/Layout.jsx";
 import Login from "./pages/Login.jsx";
 import NotFound from "./pages/NotFound.jsx";
 
-// 📌 Haupt-Dashboards
+// 📌 Dashboards
 import Dashboard from "./pages/Dashboard.jsx";
-import LearningDashboard from "./pages/LearningDashboard.jsx";
 import LearnDashboard from "./pages/LearnDashboard.jsx";
-import ProjektmanagementDashboard from "./pages/ProjektmanagementDashboard.jsx";
+import LearningDashboard from "./pages/LearningDashboard.jsx";
+import ProjektmanagementDashboard from "./pages/pm/ProjektmanagementDashboard.jsx"; // Zentraler Einstiegspunkt für PM-Themen
+import SapDashboard from "./pages/sap/SapDashboard.jsx";
+
+// 📚 SAP SD Themen
+import BusinessPartner from "./pages/sap/sd/BusinessPartner.jsx";
+import SettlementManagement from "./pages/sap/sd/SettlementManagement.jsx";
+import CreditMemoProcessing from "./pages/sap/sd/CreditMemoProcessing.jsx";
+import PriceUpload from "./pages/sap/sd/PriceUpload.jsx";
+import Permissions from "./pages/sap/sd/Permissions.jsx";
+import CoreDataServices from "./pages/sap/sd/CoreDataServices.jsx";
 
 // 🎮 Spiele
 import BuzzwordBingo from "./components/games/BuzzwordBingo.jsx";
@@ -21,36 +30,23 @@ import MindmapGame from "./components/games/MindmapGame.jsx";
 import CaseDetective from "./components/games/CaseDetective.jsx";
 import SingleChoice from "./components/games/SingleChoice.jsx";
 
-// 📚 PM-Themen
-import GrundlagenProjektarten from "./pages/pm_topics/GrundlagenProjektarten.jsx";
-import MagischesDreieck from "./pages/pm_topics/MagischesDreieck.jsx";
-import Projektstrukturierung from "./pages/pm_topics/Projektstrukturierung.jsx";
-import AgilesProjektmanagement from "./pages/pm_topics/AgilesProjektmanagement.jsx";
-import Projektueberwachung from "./pages/pm_topics/Projektueberwachung.jsx";
-import TeamOrganisation from "./pages/pm_topics/TeamOrganisation.jsx";
-import StakeholderManagement from "./pages/pm_topics/StakeholderManagement.jsx";
-import VertragProjektabschluss from "./pages/pm_topics/VertragProjektabschluss.jsx";
-import ErgaenzteThemen from "./pages/pm_topics/ErgaenzteThemen.jsx";
-
-// 📂 Themenübersicht PM & Learnings
-import PmTopics from "./pages/PMTopics.jsx";
+// 📚 Learnings Themen
 import Learnings from "./pages/Learnings.jsx";
-
 import AgileMethoden from "./pages/learnings/agile-methoden.jsx";
 import KommunikationKonflikte from "./pages/learnings/kommunikation-konflikte.jsx";
 import ProjektphasenModelle from "./pages/learnings/projektphasen-modelle.jsx";
 
-// SAP
-
-import SapDashboard from "./pages/sap/SapDashboard.jsx";
-import BusinessPartner from "./pages/sap/sd/BusinessPartner.jsx";
-import BusinessPartnerAdvanced from "./pages/sap/sd/BusinessPartnerAdvanced.jsx";
-import SettlementManagement from "./pages/sap/sd/SettlementManagement.jsx";
-import SettlementManagementAdvanced from "./pages/sap/sd/SettlementManagementAdvanced.jsx";
-import CreditMemoProcessing from "./pages/sap/sd/CreditMemoProcessing.jsx";
-import CreditMemoProcessingAdvanced from "./pages/sap/sd/CreditMemoProcessingAdvanced.jsx";
-import PriceUpload from "./pages/sap/sd/PriceUpload.jsx";
-import PriceUploadAdvanced from "./pages/sap/sd/PriceUploadAdvanced.jsx";
+// 📌 Projektmanagement-Themen (Über das Dashboard zugänglich)
+import AgilesProjektmanagement from "./pages/pm/topics/AgilesProjektmanagement.jsx";
+import ErgaenzteThemen from "./pages/pm/topics/ErgaenzteThemen.jsx";
+import GrundlagenProjektarten from "./pages/pm/topics/GrundlagenProjektarten.jsx";
+import MagischesDreieck from "./pages/pm/topics/MagischesDreieck.jsx";
+import Projektstrukturierung from "./pages/pm/topics/Projektstrukturierung.jsx";
+import Projektueberwachung from "./pages/pm/topics/Projektueberwachung.jsx";
+import StakeholderManagement from "./pages/pm/topics/StakeholderManagement.jsx";
+import TeamOrganisation from "./pages/pm/topics/TeamOrganisation.jsx";
+import VertragProjektabschluss from "./pages/pm/topics/VertragProjektabschluss.jsx";
+import PmTopics from "./pages/pm/topics/PMTopics.jsx"; // Über das Dashboard zugänglich
 
 // 🔖 Finale App-Routes
 export default function App() {
@@ -60,6 +56,7 @@ export default function App() {
         <Routes>
           {/* 🔐 Auth-Routen */}
           <Route path="/login" element={<Login />} />
+
           {/* 📌 Dashboards */}
           <Route
             path="/"
@@ -102,52 +99,7 @@ export default function App() {
             }
           />
 
-          {/* SAP */}
-
-          <Route
-            path="/sap/sd/price-upload-advanced"
-            element={
-              <PrivateRoute>
-                <Layout>
-                  <PriceUploadAdvanced />
-                </Layout>
-              </PrivateRoute>
-            }
-          />
-
-          <Route
-            path="/sap/sd/price-upload"
-            element={
-              <PrivateRoute>
-                <Layout>
-                  <PriceUpload />
-                </Layout>
-              </PrivateRoute>
-            }
-          />
-
-          <Route
-            path="/sap/sd/credit-memo-processing-advanced"
-            element={
-              <PrivateRoute>
-                <Layout>
-                  <CreditMemoProcessingAdvanced />
-                </Layout>
-              </PrivateRoute>
-            }
-          />
-
-          <Route
-            path="/sap/sd/credit-memo-processing"
-            element={
-              <PrivateRoute>
-                <Layout>
-                  <CreditMemoProcessing />
-                </Layout>
-              </PrivateRoute>
-            }
-          />
-
+          {/* 📚 SAP SD Themen */}
           <Route
             path="/sap-dashboard"
             element={
@@ -159,6 +111,7 @@ export default function App() {
             }
           />
 
+          {/* 📊 Business Partner */}
           <Route
             path="/sap/sd/business-partner"
             element={
@@ -170,6 +123,7 @@ export default function App() {
             }
           />
 
+          {/* 💰 Settlement Management */}
           <Route
             path="/sap/sd/settlement-management"
             element={
@@ -181,23 +135,49 @@ export default function App() {
             }
           />
 
+          {/* 📄 Gutschriftprozesse */}
           <Route
-            path="/sap/sd/business-partner-advanced"
+            path="/sap/sd/credit-memo-processing"
             element={
               <PrivateRoute>
                 <Layout>
-                  <BusinessPartnerAdvanced />
+                  <CreditMemoProcessing />
                 </Layout>
               </PrivateRoute>
             }
           />
 
+          {/* 💡 Preisupload */}
           <Route
-            path="/sap/sd/settlement-management-advanced"
+            path="/sap/sd/price-upload"
             element={
               <PrivateRoute>
                 <Layout>
-                  <SettlementManagementAdvanced />
+                  <PriceUpload />
+                </Layout>
+              </PrivateRoute>
+            }
+          />
+
+          {/* 🔐 Berechtigungen */}
+          <Route
+            path="/sap/sd/permissions"
+            element={
+              <PrivateRoute>
+                <Layout>
+                  <Permissions />
+                </Layout>
+              </PrivateRoute>
+            }
+          />
+
+          {/* 📊 Core Data Services */}
+          <Route
+            path="/sap/sd/core-data-services"
+            element={
+              <PrivateRoute>
+                <Layout>
+                  <CoreDataServices />
                 </Layout>
               </PrivateRoute>
             }
@@ -254,6 +234,7 @@ export default function App() {
               </PrivateRoute>
             }
           />
+
           {/* 📖 PM-Themenübersicht */}
           <Route
             path="/pm-topics"
@@ -265,7 +246,8 @@ export default function App() {
               </PrivateRoute>
             }
           />
-          {/* 📚 PM-Learnings Hauptseite */}
+
+          {/* 📚 Learnings Themen */}
           <Route
             path="/learnings"
             element={
@@ -276,7 +258,6 @@ export default function App() {
               </PrivateRoute>
             }
           />
-          {/* 📚 Learnings Themen */}
           <Route
             path="/learnings/agile-methoden"
             element={
@@ -400,6 +381,7 @@ export default function App() {
               </PrivateRoute>
             }
           />
+
           {/* ❌ Fallback-Route */}
           <Route path="*" element={<NotFound />} />
         </Routes>
