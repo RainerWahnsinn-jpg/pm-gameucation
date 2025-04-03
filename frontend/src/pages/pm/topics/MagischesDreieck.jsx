@@ -1,5 +1,5 @@
-import magischesDreieckVergleich from "../../assets/images/magischesDreieckVergleich.png";
-import magischesDreieckImage from "../../assets/images/magischesDreieck.png";
+import magischesDreieckVergleich from "../../../assets/images/magischesDreieckVergleich.png";
+import magischesDreieckImage from "../../../assets/images/magischesDreieck.png";
 
 export default function MagischesDreieck() {
   return (

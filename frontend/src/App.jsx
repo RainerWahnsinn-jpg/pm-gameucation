@@ -12,7 +12,7 @@ import NotFound from "./pages/NotFound.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
 import LearnDashboard from "./pages/LearnDashboard.jsx";
 import LearningDashboard from "./pages/LearningDashboard.jsx";
-import ProjektmanagementDashboard from "./pages/pm/ProjektmanagementDashboard.jsx"; // Zentraler Einstiegspunkt für PM-Themen
+import ProjektmanagementDashboard from "./pages/pm/ProjektmanagementDashboard.jsx"; // Zentraler Einstiegspunkt für PM-Spiele
 import SapDashboard from "./pages/sap/SapDashboard.jsx";
 
 // 📚 SAP SD Themen
@@ -30,13 +30,16 @@ import MindmapGame from "./components/games/MindmapGame.jsx";
 import CaseDetective from "./components/games/CaseDetective.jsx";
 import SingleChoice from "./components/games/SingleChoice.jsx";
 
+// 📖 PM-Themenübersicht
+import PmTopics from "./pages/pm/topics/PMTopics.jsx"; // Über das Dashboard zugänglich
+
 // 📚 Learnings Themen
 import Learnings from "./pages/Learnings.jsx";
 import AgileMethoden from "./pages/learnings/agile-methoden.jsx";
 import KommunikationKonflikte from "./pages/learnings/kommunikation-konflikte.jsx";
 import ProjektphasenModelle from "./pages/learnings/projektphasen-modelle.jsx";
 
-// 📌 Projektmanagement-Themen (Über das Dashboard zugänglich)
+// 📌 Projektmanagement-Themen
 import AgilesProjektmanagement from "./pages/pm/topics/AgilesProjektmanagement.jsx";
 import ErgaenzteThemen from "./pages/pm/topics/ErgaenzteThemen.jsx";
 import GrundlagenProjektarten from "./pages/pm/topics/GrundlagenProjektarten.jsx";
@@ -46,7 +49,6 @@ import Projektueberwachung from "./pages/pm/topics/Projektueberwachung.jsx";
 import StakeholderManagement from "./pages/pm/topics/StakeholderManagement.jsx";
 import TeamOrganisation from "./pages/pm/topics/TeamOrganisation.jsx";
 import VertragProjektabschluss from "./pages/pm/topics/VertragProjektabschluss.jsx";
-import PmTopics from "./pages/pm/topics/PMTopics.jsx"; // Über das Dashboard zugänglich
 
 // 🔖 Finale App-Routes
 export default function App() {
@@ -292,7 +294,7 @@ export default function App() {
 
           {/* 📌 Projektmanagement-Themen */}
           <Route
-            path="/learn/grundlagen-projektarten"
+            path="/pm/topics/grundlagen-projektarten"
             element={
               <PrivateRoute>
                 <Layout>
@@ -302,7 +304,7 @@ export default function App() {
             }
           />
           <Route
-            path="/learn/magisches-dreieck"
+            path="/pm/topics/magisches-dreieck"
             element={
               <PrivateRoute>
                 <Layout>
@@ -312,7 +314,7 @@ export default function App() {
             }
           />
           <Route
-            path="/learn/projektstrukturierung"
+            path="/pm/topics/projektstrukturierung"
             element={
               <PrivateRoute>
                 <Layout>
@@ -322,7 +324,7 @@ export default function App() {
             }
           />
           <Route
-            path="/learn/agiles-projektmanagement"
+            path="/pm/topics/agiles-projektmanagement"
             element={
               <PrivateRoute>
                 <Layout>
@@ -332,7 +334,7 @@ export default function App() {
             }
           />
           <Route
-            path="/learn/projektueberwachung"
+            path="/pm/topics/projektueberwachung"
             element={
               <PrivateRoute>
                 <Layout>
@@ -342,7 +344,7 @@ export default function App() {
             }
           />
           <Route
-            path="/learn/team-organisation"
+            path="/pm/topics/team-organisation"
             element={
               <PrivateRoute>
                 <Layout>
@@ -352,7 +354,7 @@ export default function App() {
             }
           />
           <Route
-            path="/learn/stakeholder-management"
+            path="/pm/topics/stakeholder-management"
             element={
               <PrivateRoute>
                 <Layout>
@@ -362,7 +364,7 @@ export default function App() {
             }
           />
           <Route
-            path="/learn/vertrag-projektabschluss"
+            path="/pm/topics/vertrag-projektabschluss"
             element={
               <PrivateRoute>
                 <Layout>
@@ -372,7 +374,7 @@ export default function App() {
             }
           />
           <Route
-            path="/learn/ergaenzte-themen"
+            path="/pm/topics/ergaenzte-themen"
             element={
               <PrivateRoute>
                 <Layout>
